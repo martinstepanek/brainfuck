@@ -60,6 +60,11 @@ namespace BrainfuckInterpreter
                     Console.Write((char) _currentCell);
                 }
 
+                if (ch == Chars.Read)
+                {
+                    _currentCell = (int)Console.ReadKey().KeyChar;
+                }
+
                 if (increase)
                 {
                     codePointer++;
