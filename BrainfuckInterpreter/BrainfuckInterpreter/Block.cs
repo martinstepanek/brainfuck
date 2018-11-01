@@ -1,6 +1,6 @@
 namespace BrainfuckInterpreter
 {
-    public class Block
+    public struct Block
     {
         public int From;
         public int To;
