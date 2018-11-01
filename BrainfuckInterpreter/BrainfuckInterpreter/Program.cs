@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace BrainfuckInterpreter
@@ -10,6 +10,7 @@ namespace BrainfuckInterpreter
             string file = "../../bf.txt";
             string content = File.ReadAllText(file);
             Interpreter i = new Interpreter(content);
+            Console.Clear();
             i.Run();
             Console.ReadKey();
         }
