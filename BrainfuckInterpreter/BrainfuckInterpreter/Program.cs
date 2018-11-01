@@ -7,7 +7,7 @@ namespace BrainfuckInterpreter
     {
         static void Main(string[] args)
         {
-            string file = "../../bf.txt";
+            string file = "../../helloWorld.txt";
             string content = File.ReadAllText(file);
             Interpreter i = new Interpreter(content);
             Console.Clear();
