@@ -1,50 +1,36 @@
-using System;
-using System.Collections.Generic;
 
 namespace BrainfuckInterpreter
 {
     public class Interpreter
     {
-        private List<int> _memory = new List<int>();
+        private int[] _memory;
         private int _pointer;
-
+        private int _currentCell => _memory[_pointer];
+        
         private string _code;
-        private int _codePointer;
 
-        private List<Block> _blocks;
+        private BlockManager _blockManager;
 
-
-        public Interpreter(string code)
+        public Interpreter(string code, int memorySize = 1000)
         {
+            _memory = new int[memorySize];
             _code = code;
-            _blocks = GetBlocks();
+            _blockManager = new BlockManager(_code);
         }
 
         public void Run()
         {
-            
-        }
-
-        private List<Block> GetBlocks()
-        {
-            Stack<int> stack = new Stack<int>();
-            List<Block> blocks = new List<Block>();
-            for (int i = 0; i < _code.Length; i++)
+            int codePointer = 0;
+            while (codePointer < _code.Length)
             {
-                char ch = _code[i];
+                char ch = _code[codePointer];
                 if (ch == Chars.Open)
                 {
-                    stack.Push(i);
+                    
                 }
-
-                if (ch == Chars.Close)
-                {
-                    int from = stack.Pop();
-                    blocks.Add(new Block(from, i));
-                }
+                codePointer++;
             }
-
-            return blocks;
-        }
+        }        
+        
     }
 }
