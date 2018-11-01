@@ -4,7 +4,6 @@ namespace BrainfuckInterpreter
 {
     public class BlockManager
     {
-
         private string _code;
         private List<Block> _blocks;
 
@@ -13,7 +12,7 @@ namespace BrainfuckInterpreter
             _code = code;
             _blocks = GetBlocks();
         }
-        
+
         private List<Block> GetBlocks()
         {
             Stack<int> stack = new Stack<int>();
@@ -45,6 +44,7 @@ namespace BrainfuckInterpreter
                     return block.From;
                 }
             }
+
             throw new BlockException();
         }
 
@@ -57,6 +57,7 @@ namespace BrainfuckInterpreter
                     return block.To;
                 }
             }
+
             throw new BlockException();
         }
     }

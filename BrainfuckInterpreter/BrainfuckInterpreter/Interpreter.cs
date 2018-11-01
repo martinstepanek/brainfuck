@@ -62,7 +62,7 @@ namespace BrainfuckInterpreter
 
                 if (ch == Chars.Read)
                 {
-                    _currentCell = (int)Console.ReadKey().KeyChar;
+                    _currentCell = Console.ReadKey().KeyChar;
                 }
 
                 if (increase)
