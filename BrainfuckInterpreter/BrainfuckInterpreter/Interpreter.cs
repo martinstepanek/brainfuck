@@ -25,7 +25,7 @@ namespace BrainfuckInterpreter
 
         private BlockManager _blockManager;
 
-        public Interpreter(string code, int memorySize = 1000)
+        public Interpreter(string code, int memorySize = 10000)
         {
             _memory = new int[memorySize];
             _code = code;
